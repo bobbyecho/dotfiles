@@ -1,0 +1,5 @@
+# react-native
+alias rnandroid="npx react-native run-android"
+alias rndebug="adb reverse tcp:9090 tcp:9090"
+alias rnrevive="adb reverse tcp:8081 tcp:8081"
+alias clearwatch="watchman watch-del-all"
