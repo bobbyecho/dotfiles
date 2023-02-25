@@ -1,6 +1,6 @@
 # start yabai
-ctrl + shift + cmd - s : brew services start yabai
-ctrl + shift + cmd - q : brew services stop yabai
+ctrl + shift + cmd - s : brew services start yabai && say "yabai start"
+ctrl + shift + cmd - q : brew services stop yabai && say "yabai stop"
 
 # stop yabai
 
