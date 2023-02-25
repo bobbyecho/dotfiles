@@ -1,3 +1,14 @@
+# The per-user yabai configuration file must be executable; it is just a shell script that's ran before yabai launches. It must be placed at one of the following places (in order):
+
+#   $XDG_CONFIG_HOME/yabai/yabairc
+#   $HOME/.config/yabai/yabairc
+#   $HOME/.yabairc
+
+# create empty configuration file and make it executable
+#   touch ~/.yabairc
+#   chmod +x ~/.yabairc
+
+
 # bsp, stack or float
 yabai -m config layout bsp
 
