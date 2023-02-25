@@ -8,13 +8,10 @@
 #   touch ~/.yabairc
 #   chmod +x ~/.yabairc
 
-
-# bsp, stack or float
-yabai -m config layout bsp
-
 yabai -m config window_placement second_child
+yabai -m config window_topmost off
 
-# padding
+yabai -m config layout bsp # bsp, stack or float
 yabai -m config top_padding 10
 yabai -m config bottom_padding 10
 yabai -m config left_padding 10
@@ -22,14 +19,12 @@ yabai -m config right_padding 10
 yabai -m config window_gap 10
 
 # mouse settings
-yabai -m config mouse_follows_focus on
+yabai -m config mouse_follows_focus off
+yabai -m config focus_follows_mouse autofocus
 yabai -m config mouse_modifier alt
-
-# left click + drag
 yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
-
-yabai -m mouse_drop_action swap
+yabai -m config mouse_drop_action swap
 
 # disable spesific apps
 yabai -m rule --add app="^System Settings$" manage=off
@@ -39,3 +34,5 @@ yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Steam$" manage=off
 yabai -m rule --add app="^Dota$" manage=off
 yabai -m rule --add app="^Dota 2$" manage=off
+
+echo "yabai configuration loaded"

@@ -1,14 +1,11 @@
 # android studio
 https://developer.android.com/studio
 
-#intellij IDEA
+# intellij IDEA
 https://www.jetbrains.com/idea/download/
 
-#flipper debugger
+# flipper debugger
 https://fbflipper.com/
 
-#node version manager
-https://github.com/nvm-sh/nvm (select install via curl)
-
-#reactotron (optional)
+# reactotron (optional)
 https://github.com/infinitered/reactotron/releases

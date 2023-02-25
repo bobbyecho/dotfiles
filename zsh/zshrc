@@ -43,3 +43,5 @@ jenv() {
     command jenv "$command" "$@";;
   esac
 }
+
+echo "zsh configuration loaded"

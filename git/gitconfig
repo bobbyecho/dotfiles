@@ -1,0 +1,12 @@
+# This is Git's per-user configuration file.
+[user]
+	email = bobbyechop@gmail.com
+	name = Bobby Echo Prasetyo
+# Please adapt and uncomment the following lines:
+#	name = Bobby Echo Prasetyo
+#	email = raden.bambang@sicepat.com
+
+[alias]
+    ls-subtrees = !"git log | grep git-subtree-dir | tr -d ' ' | cut -d ":" -f2 | sort | uniq | xargs -I {} bash -c 'if [ -d $(git rev-parse --show-toplevel)/{} ] ; then echo {}; fi'"
+[push]
+	followTags = true
