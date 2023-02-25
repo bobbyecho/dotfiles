@@ -1,1 +1,2 @@
-$DOTFILES/skhd/skhd=$HOME/.skhdrc
+$DOTFILES/skhd/skhdrc=$HOME/.skhdrc
+$DOTFILES/skhd/aliases=$HOME/$SHELL_EXTENDER/skhd-aliases
