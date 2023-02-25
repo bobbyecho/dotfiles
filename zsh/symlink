@@ -1,1 +1,2 @@
 $DOTFILES/zsh/zshrc=$HOME/.zshrc
+$DOTFILES/zsh/aliases=$HOME/$SHELL_EXTENDER/zsh-aliases

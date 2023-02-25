@@ -1,1 +1,2 @@
 $DOTFILES/yabai/yabairc=$HOME/.yabairc
+$DOTFILES/yabai/aliases=$HOME/$SHELL_EXTENDER/yabai-aliases

@@ -2,6 +2,8 @@
 
 # cd "$(dirname "$0")/.."
 DOTFILES=$(pwd -P)
+SHELL_EXTENDER=".shell_extender"
+mkdir -p "$HOME/$SHELL_EXTENDER"
 
 set -e
 
@@ -113,3 +115,5 @@ run () {
 }
 
 run
+
+exec $SHELL -l

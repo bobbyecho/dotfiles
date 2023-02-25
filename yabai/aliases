@@ -1,0 +1,3 @@
+alias yabai-start="brew services start yabai"
+alias yabai-stop="brew services stop yabai"
+alias yabai-restart="brew services restart yabai"
