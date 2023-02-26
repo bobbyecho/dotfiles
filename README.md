@@ -1,4 +1,4 @@
-# Dotfiles
+# Dotfiles (MacOS)
 my personal dotfiles written in shell script
 
 ### Fresh MacOS Install
