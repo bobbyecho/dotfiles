@@ -7,8 +7,12 @@ mkdir -p "$HOME/$SHELL_EXTENDER"
 
 set -e
 
-function info () {
-  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+function skip () {
+  printf "\r  [ \033[00;34mSKIP\033[0m ] $1\n"
+}
+
+function install () {
+  printf "\r  [ \033[0;INSTALL\033[0m ] $1\n"
 }
 
 function user () {
@@ -19,6 +23,36 @@ function success () {
   printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
 }
 
+function havecmd() {
+  # extends command -v to optionally (set $HAVECMD_REPORT) report errors
+  # Often used like:
+  # havecmd some_command || exit $?
+  # To exit in my shell scripts if a required command isn't found
+
+  BINARY="${1:?Must provide command to check}"
+  if [[ -z "$(command -v $BINARY)" ]]; then
+    echo false
+  else
+    echo true
+  fi
+}
+
+function install_brew() {
+  if [ "$(havecmd brew)" = true ]; then
+    skip "binary brew already exists"        
+  else
+    success "brew successfully installed"
+  fi
+}
+
+function install_nvm() {
+  if [ -d "${HOME}/.nvm/.git" ]; then
+    skip "binary nvm already exists"        
+  else
+    success "nvm successfully installed"
+  fi
+}
+
 link_file () {
   local src=$1 dst=$2
 
@@ -26,6 +60,7 @@ link_file () {
   local backup=
   local skip=
   local action=
+  local currentSrc=
 
   if [ -f "$dst" ] || [ -d "$dst" ] || [ -L "$dst" ]
   then
@@ -35,7 +70,7 @@ link_file () {
 
       # ignoring exit 1 from readlink in case where file already exists
       # shellcheck disable=SC2155
-      local currentSrc="$(readlink $dst)"
+      currentSrc="$(readlink $dst)"
 
       if [ "$currentSrc" == "$src" ]
       then
@@ -87,7 +122,7 @@ link_file () {
 
     if [ "$skip" == "true" ]
     then
-      success "skipped $src"
+      skip "skipped link $src => $dst"
     fi
   fi
 
@@ -98,9 +133,40 @@ link_file () {
   fi
 }
 
+# some libs must to be installed by hand rather inside loop function
+# - brew (must install first)
+# - nvm
+# 
+# adding `-not -path` in install libraries section if lib have to be install manually
 run () {
   local overwrite_all=false backup_all=false skip_all=false
 
+  install_brew
+  install_nvm
+
+  # install libraries
+  find -H "$DOTFILES" -type f -maxdepth 2 \
+  -not -path '*.git*' \
+  -not -path '*brew*' \
+  -not -path '*nvm*' \
+  -name 'install.sh' | while read filesrc
+  do
+    dir_name=$(dirname $filesrc)
+    ignore_check_exists=$(find -H ${dir_name} -name 'ignore-check')
+    if [[ -z $ignore_check_exists ]]
+    then
+      base_name="$(basename $dir_name)"
+      if [ "$(havecmd $base_name)" = true ]; then
+        skip "binary ${base_name} already exists"        
+      else
+        install "installing $base_name..."
+        sh $filesrc &> /dev/null
+        success "$base_name sucessfully installed"
+      fi
+    fi
+  done
+
+  # manage rc files
   find -H "$DOTFILES" -maxdepth 2 -name 'symlink' -not -path '*.git*' | while read linkfile
   do
     cat "$linkfile" | while read line
