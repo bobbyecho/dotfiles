@@ -2,8 +2,6 @@
 ctrl + shift + cmd - s : brew services start yabai && say "yabai start"
 ctrl + shift + cmd - q : brew services stop yabai && say "yabai stop"
 
-# stop yabai
-
 # # move windows
 ctrl + shift + cmd - up : yabai -m window --warp north
 ctrl + shift + cmd - right : yabai -m window --warp east
