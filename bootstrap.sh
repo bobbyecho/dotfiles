@@ -12,7 +12,7 @@ function skip () {
 }
 
 function install () {
-  printf "\r  [ \033[0;INSTALL\033[0m ] $1\n"
+  printf "\r  [ \033[0;33mINSTALL\033[0m ] $1\n"
 }
 
 function user () {
@@ -41,6 +41,8 @@ function install_brew() {
   if [ "$(havecmd brew)" = true ]; then
     skip "binary brew already exists"        
   else
+    install "installing brew..."
+    sh $DOTFILES/brew/install.sh &> /dev/null
     success "brew successfully installed"
   fi
 }
@@ -49,7 +51,19 @@ function install_nvm() {
   if [ -d "${HOME}/.nvm/.git" ]; then
     skip "binary nvm already exists"        
   else
+    install "installing nvm..."
+    sh $DOTFILES/nvm/install.sh &> /dev/null
     success "nvm successfully installed"
+  fi
+}
+
+function install_zsh_auto_autosuggestions() {
+  if [ -d "${HOME}/.zsh/zsh-autosuggestions" ]; then
+    skip "zsh-autosuggestions already exists"        
+  else
+    install "installing zsh-autosuggestions..."
+    sh $DOTFILES/zsh-autosuggestions/install.sh &> /dev/null
+    success "zsh-autosuggestions successfully installed"
   fi
 }
 
@@ -143,12 +157,14 @@ run () {
 
   install_brew
   install_nvm
+  install_zsh_auto_autosuggestions
 
   # install libraries
   find -H "$DOTFILES" -type f -maxdepth 2 \
   -not -path '*.git*' \
   -not -path '*brew*' \
   -not -path '*nvm*' \
+  -not -path '*zsh-autosuggestions*' \
   -name 'install.sh' | while read filesrc
   do
     dir_name=$(dirname $filesrc)
