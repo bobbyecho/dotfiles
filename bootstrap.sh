@@ -67,6 +67,16 @@ function install_zsh_auto_autosuggestions() {
   fi
 }
 
+function install_zsh_syntax_highlighting() {
+  if [ -d "${HOME}/.zsh/zsh-syntax-highlighting" ]; then
+    skip "zsh-syntax-highlighting already exists"        
+  else
+    install "installing zsh-syntax-highlighting..."
+    sh $DOTFILES/zsh-syntax-highlighting/install.sh &> /dev/null
+    success "zsh-syntax-highlighting successfully installed"
+  fi
+}
+
 link_file () {
   local src=$1 dst=$2
 
@@ -150,6 +160,8 @@ link_file () {
 # some libs must to be installed by hand rather inside loop function
 # - brew (must install first)
 # - nvm
+# - zsh-autosuggestion
+# - zsh-syntax-highlighting
 # 
 # adding `-not -path` in install libraries section if lib have to be install manually
 run () {
@@ -158,6 +170,7 @@ run () {
   install_brew
   install_nvm
   install_zsh_auto_autosuggestions
+  install_zsh_syntax_highlighting
 
   # install libraries
   find -H "$DOTFILES" -type f -maxdepth 2 \
@@ -165,6 +178,7 @@ run () {
   -not -path '*brew*' \
   -not -path '*nvm*' \
   -not -path '*zsh-autosuggestions*' \
+  -not -path '*zsh-syntax-highlighting*' \
   -name 'install.sh' | while read filesrc
   do
     dir_name=$(dirname $filesrc)
