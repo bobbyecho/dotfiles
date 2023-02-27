@@ -12,9 +12,9 @@ xcode-select --install
 ```sh
 cd ~ && git clone https://github.com/bobbyecho/dotfiles.git dotfiles
 ```
-or with ssh
+or using ssh
 ```sh
-cd ~ && git git@github.com:bobbyecho/dotfiles.git dotfiles
+cd ~ && git clone git@github.com:bobbyecho/dotfiles.git dotfiles
 ```
 
 ### Bootstrap your environment
