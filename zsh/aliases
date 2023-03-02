@@ -6,3 +6,6 @@ alias clearwatch="watchman watch-del-all"
 
 # clear terminal with one character
 alias x="clear; printf '\e[3J'"
+
+# paste to android emulator
+alias acp="adb shell input text"
