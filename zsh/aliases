@@ -9,3 +9,8 @@ alias x="clear; printf '\e[3J'"
 
 # paste to android emulator
 alias acp="adb shell input text"
+
+# git
+alias ga="git add"
+alias gcm="git commit -m"
+alias gp="git push"
