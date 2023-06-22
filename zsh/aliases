@@ -23,3 +23,6 @@ alias gpur="git push -u origin"
 alias gs="git status"
 alias gc="git checkout"
 alias gcb="git checkout -b"
+
+#docker
+alias drac="docker rm $(docker ps -aq)"
