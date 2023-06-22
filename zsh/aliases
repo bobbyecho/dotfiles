@@ -25,7 +25,7 @@ alias gc="git checkout"
 alias gcb="git checkout -b"
 
 #docker
-alias docrmac="docker rm $(docker ps -aq)"
-alias docconlsa="docker container ls -a"
-alias docconls="docker container ls"
-alias docimg="docker image"
+alias drac="docker rm $(docker ps -aq)"
+alias dclsa="docker container ls -a"
+alias dcls="docker container ls"
+alias di="docker images"
