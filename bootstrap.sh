@@ -77,6 +77,16 @@ function install_zsh_syntax_highlighting() {
   fi
 }
 
+function install_sdk_man {
+  if [ -d "${HOME}/.sdkman/bin/sdkman-init.sh" ]; then
+    skip "sdk-man already exists"        
+  else
+    install "installing sdk-man..."
+    sh $DOTFILES/sdk/install.sh &> /dev/null
+    success "sdk-man successfully installed"
+  fi
+}
+
 link_file () {
   local src=$1 dst=$2
 
