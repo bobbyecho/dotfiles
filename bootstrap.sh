@@ -78,11 +78,11 @@ function install_zsh_syntax_highlighting() {
 }
 
 function install_sdk_man {
-  if [ -d "${HOME}/.sdkman/bin/sdkman-init.sh" ]; then
+  if [ -d "${HOME}/.sdkman" ]; then
     skip "sdk-man already exists"        
   else
     install "installing sdk-man..."
-    sh $DOTFILES/sdk/install.sh &> /dev/null
+    sh $DOTFILES/sdk-man/install.sh &> /dev/null
     success "sdk-man successfully installed"
   fi
 }
@@ -181,6 +181,7 @@ run () {
   install_nvm
   install_zsh_auto_autosuggestions
   install_zsh_syntax_highlighting
+  install_sdk_man
 
   # install libraries
   find -H "$DOTFILES" -type f -maxdepth 2 \
@@ -189,6 +190,7 @@ run () {
   -not -path '*nvm*' \
   -not -path '*zsh-autosuggestions*' \
   -not -path '*zsh-syntax-highlighting*' \
+  -not -path '*sdk-man*' \
   -name 'install.sh' | while read filesrc
   do
     dir_name=$(dirname $filesrc)
