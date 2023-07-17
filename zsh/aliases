@@ -1,3 +1,7 @@
+# terminal
+alias restart-zsh="exec zsh -l"
+alias restart-bash="exec bash -l"
+
 # react native
 alias rnandroid="npx react-native run-android"
 alias rnios="npx react-native run-ios"
