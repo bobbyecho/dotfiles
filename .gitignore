@@ -1,3 +1,4 @@
 installed_ignore_libs.txt
 works
 node_modules
+.DS_Store
