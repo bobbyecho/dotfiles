@@ -20,11 +20,15 @@ alias x="clear; printf '\e[3J'"
 alias acp="adb shell input text"
 
 # git
+BRANCH_NAME="$(git rev-parse --abbrev-ref HEAD)"
+alias brname=${BRANCH_NAME}
 alias ga="git add"
 alias gcm="git commit -m"
 alias gps="git push"
 alias gpl="git push"
-alias gpur="git push -u origin"
+function gpur() {
+  git push -u origin ${BRANCH_NAME}
+}
 alias gs="git status"
 alias gc="git checkout"
 alias gcb="git checkout -b"
@@ -32,7 +36,6 @@ alias ga="git add"
 alias gcm="git commit -m"
 alias gps="git push"
 alias gpl="git push"
-alias gpur="git push -u origin"
 alias gs="git status"
 alias gc="git checkout"
 alias gcb="git checkout -b"
