@@ -59,3 +59,7 @@ alias dcls="docker container ls"
 alias di="docker images"
 alias dirm="docker image rm"
 alias dirmf="docker image rm -f"
+
+#productivity
+alias cpath="pwd | pbcopy"
+alias copypath="pwd | pbcopy"
