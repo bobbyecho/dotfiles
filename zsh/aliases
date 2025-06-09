@@ -63,3 +63,4 @@ alias dirmf="docker image rm -f"
 #productivity
 alias cpath="pwd | pbcopy"
 alias copypath="pwd | pbcopy"
+alias pwdcp="pwd | pbcopy"
