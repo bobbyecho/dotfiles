@@ -39,6 +39,7 @@ brew "apktool"
 
 # ios
 brew "ios-deploy"
+brew "cocoapods"
 # install android sdk
 # sdkmanager "platform-tools" "emulator" "platforms;android-34"
 # avdmanager create avd -n Pixel_6_Pro_API_34_PlayStore_ARM -k "system-images;android-34;google_apis_playstore;arm64-v8a" --device "pixel_6_pro"
