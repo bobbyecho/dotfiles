@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "homebrew/cask-fonts"
 tap "homebrew/services"
 
 # application
@@ -21,6 +22,7 @@ brew "fastlane"
 brew "watchman"
 brew "ruby"
 brew "scrcpy"
+brew "python@3.11"
 
 # java
 cask "zulu@17"
@@ -34,6 +36,9 @@ cask "android-commandlinetools"
 brew "bundletool"
 brew "apktool"
 
+
+# ios
+brew "ios-deploy"
 # install android sdk
 # sdkmanager "platform-tools" "emulator" "platforms;android-34"
 # avdmanager create avd -n Pixel_6_Pro_API_34_PlayStore_ARM -k "system-images;android-34;google_apis_playstore;arm64-v8a" --device "pixel_6_pro"
