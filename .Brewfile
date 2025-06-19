@@ -45,3 +45,6 @@ brew "cocoapods"
 # avdmanager create avd -n Pixel_6_Pro_API_34_PlayStore_ARM -k "system-images;android-34;google_apis_playstore;arm64-v8a" --device "pixel_6_pro"
 # sdkmanager "system-images;android-34;google_apis_playstore;arm64-v8a"
 # sdkmanager --licenses
+
+# AI Tools
+brew "ollama"
