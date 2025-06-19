@@ -11,6 +11,7 @@ cask "arc"
 cask "slack"
 cask "spotify"
 cask "whatsapp"
+cask "orbstack"
 
 # utility
 brew "gnutls"
