@@ -1,3 +1,16 @@
+# load nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# android
+export ANDROID_HOME=$HOMEBREW_PREFIX/share/android-commandlinetools
+export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+export PATH=$ANDROID_HOME/emulator:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+
 # terminal
 alias restart-zsh="exec zsh -l"
 alias restart-bash="exec bash -l"
@@ -64,3 +77,6 @@ alias dirmf="docker image rm -f"
 alias cpath="pwd | pbcopy"
 alias copypath="pwd | pbcopy"
 alias pwdcp="pwd | pbcopy"
+
+# export variable
+export CODE="/Users/$USER/code"
