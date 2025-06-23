@@ -24,6 +24,7 @@ brew "watchman"
 brew "ruby"
 brew "scrcpy"
 brew "python@3.11"
+brew "zsh"
 
 # java
 cask "zulu@17"
