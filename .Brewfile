@@ -12,6 +12,7 @@ cask "slack"
 cask "spotify"
 cask "whatsapp"
 cask "orbstack"
+cask "chatbox"
 
 # utility
 brew "gnutls"
