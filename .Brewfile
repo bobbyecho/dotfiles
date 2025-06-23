@@ -1,13 +1,13 @@
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "homebrew/cask-fonts"
-tap "homebrew/services"
+#tap "homebrew/bundle"
+#tap "homebrew/cask"
+#tap "homebrew/core"
+#tap "homebrew/cask-fonts"
+#tap "homebrew/services"
 
 # application
 cask "visual-studio-code"
 cask "figma"
-cask "arc"
+#cask "arc"
 cask "slack"
 cask "spotify"
 cask "whatsapp"
@@ -19,25 +19,21 @@ brew "gnupg"
 brew "jq"
 brew "jenv"
 brew "nvm"
+brew "ruby"
 brew "fastlane"
 brew "watchman"
-brew "ruby"
 brew "scrcpy"
 brew "python@3.11"
-brew "zsh"
+# brew "zsh"
 
 # java
 cask "zulu@17"
-
-# mobile debugger
-cask "flipper"
 
 # android
 cask "android-platform-tools"
 cask "android-commandlinetools"
 brew "bundletool"
 brew "apktool"
-
 
 # ios
 brew "ios-deploy"

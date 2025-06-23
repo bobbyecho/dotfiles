@@ -33,15 +33,11 @@ alias x="clear; printf '\e[3J'"
 alias acp="adb shell input text"
 
 # git
-BRANCH_NAME="$(git rev-parse --abbrev-ref HEAD)"
-alias brname=${BRANCH_NAME}
 alias ga="git add"
 alias gcm="git commit -m"
 alias gps="git push"
 alias gpl="git push"
-function gpur() {
-  git push -u origin ${BRANCH_NAME}
-}
+alias gpur="git push -u origin"
 alias gs="git status"
 alias gc="git checkout"
 alias gcb="git checkout -b"
@@ -66,12 +62,12 @@ function gunwipall() {
 }
 
 #docker
-alias drac="docker rm $(docker ps -a -q)"
-alias dclsa="docker container ls -a"
-alias dcls="docker container ls"
-alias di="docker images"
-alias dirm="docker image rm"
-alias dirmf="docker image rm -f"
+#alias drac="docker rm $(docker ps -a -q)"
+#alias dclsa="docker container ls -a"
+#alias dcls="docker container ls"
+#alias di="docker images"
+#alias dirm="docker image rm"
+#alias dirmf="docker image rm -f"
 
 #productivity
 alias cpath="pwd | pbcopy"
