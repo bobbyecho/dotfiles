@@ -27,6 +27,9 @@ brew "scrcpy"
 brew "python@3.11"
 # brew "zsh"
 
+# golang
+brew "go"
+
 # java
 cask "zulu@17"
 
