@@ -44,9 +44,15 @@ brew "ios-deploy"
 brew "cocoapods"
 # install android sdk
 # sdkmanager "platform-tools" "emulator" "platforms;android-34"
-# avdmanager create avd -n Pixel_6_Pro_API_34_PlayStore_ARM -k "system-images;android-34;google_apis_playstore;arm64-v8a" --device "pixel_6_pro"
 # sdkmanager "system-images;android-34;google_apis_playstore;arm64-v8a"
+# check device in avd
+# avdmanager list devices
+# avdmanager create avd -n "Pixel 7 Pro" -k "system-images;android-34;google_apis_playstore;arm64-v8a" --device "pixel_6_pro"
 # sdkmanager --licenses
+#install tablet (nexus 9/10)
+#avdmanager create avd -n tablet -d 82 -k "system-images;android-34;google_apis_playstore;arm64-v8a"
+#install phone (nexus)
+#avdmanager create avd -n tablet -d 1 -k "system-images;android-34;google_apis_playstore;arm64-v8a"
 
-# AI Tools
-brew "ollama"
+# API Testing
+brew "bruno"
