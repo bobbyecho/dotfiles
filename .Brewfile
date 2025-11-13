@@ -13,6 +13,7 @@ cask "spotify"
 cask "whatsapp"
 cask "orbstack"
 cask "chatbox"
+cask "qtpass"
 
 # utility
 brew "gnutls"
@@ -53,6 +54,9 @@ brew "cocoapods"
 #avdmanager create avd -n tablet -d 82 -k "system-images;android-34;google_apis_playstore;arm64-v8a"
 #install phone (nexus)
 #avdmanager create avd -n tablet -d 1 -k "system-images;android-34;google_apis_playstore;arm64-v8a"
+#install android tv
+#sdkmanager "system-images;android-36;google-tv;arm64-v8a"
+#avdmanager create avd -n android_tv -d 57 -k "system-images;android-36;google-tv;arm64-v8a"
 
 # API Testing
 brew "bruno"
