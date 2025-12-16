@@ -14,6 +14,7 @@ cask "whatsapp"
 cask "orbstack"
 cask "chatbox"
 cask "qtpass"
+cask "maccy"
 
 # utility
 brew "gnutls"
